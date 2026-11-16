@@ -7,17 +7,23 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
-  source:
-    repoURL: https://github.com/MrSandStone/archive.git
-    targetRevision: main
-    path: applications/jellyfin
-    helm:
-      releaseName: jellyfin
-      valueFiles:
-        - values.yaml
+  sources:
+    - repoURL: https://jellyfin.github.io/jellyfin-helm
+      chart: jellyfin
+      targetRevision: 3.7.0
+      helm:
+        releaseName: jellyfin
+        valueFiles:
+          - $values/applications/jellyfin/values.yaml
+
+    - repoURL: https://github.com/MrSandStone/archive.git
+      targetRevision: main
+      ref: values
+
   destination:
     server: https://kubernetes.default.svc
     namespace: jellyfin
+    
   syncPolicy:
     automated:
       prune: true
