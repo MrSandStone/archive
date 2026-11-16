@@ -14,7 +14,7 @@ spec:
       helm:
         releaseName: jellyfin
         valueFiles:
-          - - $values/applications/jellyfin/values.yaml
+          - $values/archive/applications/jellyfin/values.yaml
 
     - repoURL: https://github.com/MrSandStone/archive.git
       targetRevision: main
