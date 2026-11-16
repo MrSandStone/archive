@@ -28,11 +28,11 @@ resources:
 timezone: Europe/Warsaw
 
 ingress:
-  enabled: false
+  enabled: true
   className: ""
   annotations: {}
   hosts:
-    - host: jellyfin.example.local
+    - host: jellyfin.home.arpa
       paths:
         - path: /
           pathType: Prefix
