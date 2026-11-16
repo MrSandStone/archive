@@ -29,10 +29,10 @@ timezone: Europe/Warsaw
 
 ingress:
   enabled: true
-  className: ""
+  className: "traefik"
   annotations: {}
   hosts:
-    - host: jellyfin.home.arpa
+    - host: archive.home.local
       paths:
         - path: /
           pathType: Prefix
