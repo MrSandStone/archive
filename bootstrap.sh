@@ -1,7 +1,5 @@
-# add helm repo
-helm repo add jellyfin https://jellyfin.github.io/jellyfin-helm
-helm repo update
+# dodanie konfiguracji dla argocd
 
-# install 
-
-helm install jellyfin jellyfin/jellyfin -f applications/jellyfin/values.yaml
+kubectl create namespace argocd
+kubectl apply -n argocd --server-side --force-conflicts \
+  -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
