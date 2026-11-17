@@ -3,4 +3,4 @@ name: jellyfin
 description: 
 type: application
 version: 0.1.0
-appVersion: "12.4"
+appVersion: "10.11.11"
