@@ -1,6 +1,7 @@
 replicaCount: 1
 
 image:
+  tag: "10.11.11"
   pullPolicy: IfNotPresent
 
 persistence:
